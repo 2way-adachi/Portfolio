@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家計簿税率計算</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+<script th:src="@{/script.js}"></script>
+<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body th:object="${c}">
+	<h1>家計簿税率計算</h1>
+	<form class="index" action="/confirm" method="POST">
+		<div class="tax8">
+			<div th:class="${c.names.get(0)}">
+				<ul>
+					<p th:text="${c.displayNames.get(0)}"></p>
+					<li><input type="number" th:class="${c.names.get(0) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(0) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(0) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(0) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(0) + ' input'}"></li>
+					<button type="button" th:class="${c.names.get(0)}">+</button>
+					<p th:class="${c.names.get(0)}" th:name="${c.names.get(0)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(1)}">
+				<ul>
+					<p th:text="${c.displayNames.get(1)}"></p>
+					<li><input type="number" th:class="${c.names.get(1) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(1) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(1) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(1) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(1) + ' input'}"></li>
+					<button type="button" th:class="${c.names.get(1)}">+</button>
+					<p th:class="${c.names.get(1)}" th:name="${c.names.get(1)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(2)}">
+				<ul>
+					<p th:text="${c.displayNames.get(2)}"></p>
+					<li><input type="number" th:class="${c.names.get(2) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(2) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(2) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(2) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(2) + ' input'}"></li>					
+					<button type="button"  th:class="${c.names.get(2)}">+</button>
+					<p th:class="${c.names.get(2)}" th:name="${c.names.get(2)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(3)}">
+				<ul>
+					<p th:text="${c.displayNames.get(3)}"></p>
+					<li><input type="number" th:class="${c.names.get(3) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(3) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(3) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(3) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(3) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(3)}">+</button>
+					<p th:class="${c.names.get(3)}" th:name="${c.names.get(3)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(4)}">
+				<ul>
+					<p th:text="${c.displayNames.get(4)}"></p>
+					<li><input type="number" th:class="${c.names.get(4) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(4) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(4) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(4) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(4) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(4)}">+</button>
+					<p th:class="${c.names.get(4)}" th:name="${c.names.get(4)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(5)}">
+				<ul>
+					<p th:text="${c.displayNames.get(5)}"></p>
+					<li><input type="number" th:class="${c.names.get(5) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(5) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(5) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(5) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(5) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(5)}">+</button>
+					<p th:class="${c.names.get(5)}" th:name="${c.names.get(5)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(6)}">
+				<ul>
+					<p th:text="${c.displayNames.get(6)}"></p>
+					<li><input type="number" th:class="${c.names.get(6) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(6) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(6) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(6) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(6) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(6)}">+</button>
+					<p th:class="${c.names.get(6)}" th:name="${c.names.get(6)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(7)}">
+				<ul>
+					<p th:text="${c.displayNames.get(7)}"></p>
+					<li><input type="number" th:class="${c.names.get(7) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(7) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(7) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(7) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(7) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(7)}">+</button>
+					<p th:class="${c.names.get(7)}" th:name="${c.names.get(7)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(8)}">
+				<ul>
+					<p th:text="${c.displayNames.get(8)}"></p>
+					<li><input type="number" th:class="${c.names.get(8) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(8) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(8) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(8) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(8) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(8)}">+</button>
+					<p th:class="${c.names.get(8)}" th:name="${c.names.get(8)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(9)}">
+				<ul>
+					<p th:text="${c.displayNames.get(9)}"></p>
+					<li><input type="number" th:class="${c.names.get(9) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(9) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(9) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(9) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(9) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(9)}">+</button>
+					<p th:class="${c.names.get(9)}" th:name="${c.names.get(9)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(10)}">
+				<ul>
+					<p th:text="${c.displayNames.get(10)}"></p>
+					<li><input type="number" th:class="${c.names.get(10) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(10) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(10) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(10) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(10) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(10)}">+</button>
+					<p th:class="${c.names.get(10)}" th:name="${c.names.get(10)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(11)}">
+				<ul>
+					<p th:text="${c.displayNames.get(11)}"></p>
+					<li><input type="number" th:class="${c.names.get(11) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(11) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(11) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(11) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(11) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(11)}">+</button>
+					<p th:class="${c.names.get(11)}" th:name="${c.names.get(11)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(12)}">
+				<ul>
+					<p th:text="${c.displayNames.get(12)}"></p>
+					<li><input type="number" th:class="${c.names.get(12) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(12) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(12) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(12) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(12) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(12)}">+</button>
+					<p th:class="${c.names.get(12)}" th:name="${c.names.get(12)}">0</p>
+				</ul>
+			</div>
+		</div>
+		<div class="tax10">
+			<div th:class="${c.names.get(13)}">
+				<ul>
+					<p th:text="${c.displayNames.get(13)}"></p>
+					<li><input type="number" th:class="${c.names.get(13) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(13) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(13) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(13) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(13) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(13)}">+</button>
+					<p th:class="${c.names.get(13)}" th:name="${c.names.get(13)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(14)}">
+				<ul>
+					<p th:text="${c.displayNames.get(14)}"></p>
+					<li><input type="number" th:class="${c.names.get(14) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(14) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(14) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(14) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(14) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(14)}">+</button>
+					<p th:class="${c.names.get(14)}" th:name="${c.names.get(14)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(15)}">
+				<ul>
+					<p th:text="${c.displayNames.get(15)}"></p>
+					<li><input type="number" th:class="${c.names.get(15) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(15) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(15) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(15) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(15) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(15)}">+</button>
+					<p th:class="${c.names.get(15)}" th:name="${c.names.get(15)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(16)}">
+				<ul>
+					<p th:text="${c.displayNames.get(16)}"></p>
+					<li><input type="number" th:class="${c.names.get(16) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(16) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(16) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(16) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(16) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(16)}">+</button>
+					<p th:class="${c.names.get(16)}" th:name="${c.names.get(16)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(17)}">
+				<ul>
+					<p th:text="${c.displayNames.get(17)}"></p>
+					<li><input type="number" th:class="${c.names.get(17) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(17) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(17) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(17) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(17) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(17)}">+</button>
+					<p th:class="${c.names.get(17)}" th:name="${c.names.get(17)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(18)}">
+				<ul>
+					<p th:text="${c.displayNames.get(18)}"></p>
+					<li><input type="number" th:class="${c.names.get(18) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(18) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(18) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(18) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(18) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(18)}">+</button>
+					<p th:class="${c.names.get(18)}" th:name="${c.names.get(18)}">0</p>
+				</ul>
+			</div>
+			<div th:class="${c.names.get(19)}">
+				<ul>
+					<p th:text="${c.displayNames.get(19)}"></p>
+					<li><input type="number" th:class="${c.names.get(19) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(19) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(19) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(19) + ' input'}"></li>
+					<li><input type="number" th:class="${c.names.get(19) + ' input'}"></li>
+					<button type="button"  th:class="${c.names.get(19)}">+</button>
+					<p th:class="${c.names.get(19)}" th:name="${c.names.get(19)}" >0</p>
+				</ul>
+			</div>
+		</div>
+		<section class="total">
+			<div class="button">
+				<span>コメント入力欄： <input type="text" name="comment" /></span> 
+				<input type="date" name="date" /> 
+				<span><input
+					class="userOption" type="radio" name="tax" value="before" checked />
+					税込</span> 
+				<span><input class="userOption" type="radio" name="tax"
+					value="after"/> ＋税 </span>
+				<button class="userOption calc" type="button">計算する</button>
+				<button class="userOption delete" type="button">すべてクリア</button>
+				<input type="submit" value="送信" />
+			</div>
+			<p class="error" th:text="${error}">エラーはありません</p>
+			<div class="formContent">
+				<div id="addComment">
+					<button type="button" class="life" id="life">ライフ</button>
+					<button type="button" id="aeon">イオン</button>
+					<button type="button" id="kohnan">コーナン</button>
+					<button type="button" id="welcia">ウェルシア</button>
+				</div>
+				<div>
+					<p class="formText">8%カテゴリ</p>
+					<p class="formText">10%カテゴリ</p>
+					<p class="formText">小計</p>
+				</div>
+				<div>
+					<p class="Tax8 output">0</p>
+					<p class="Tax10 output">0</p>
+					<p class="Total output">0</p>
+					<!-- TODO 各カテゴリと合計値の数値をinput hiddenで同時に送信 -->
+					<input type="hidden" value="0" th:class="${c.names.get(0)}" th:name="${c.names.get(0)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(1)}" th:name="${c.names.get(1)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(2)}" th:name="${c.names.get(2)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(3)}" th:name="${c.names.get(3)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(4)}" th:name="${c.names.get(4)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(5)}" th:name="${c.names.get(5)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(6)}" th:name="${c.names.get(6)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(7)}" th:name="${c.names.get(7)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(8)}" th:name="${c.names.get(8)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(9)}" th:name="${c.names.get(9)}"/>
+  					<input type="hidden" value="0" th:class="${c.names.get(10)}" th:name="${c.names.get(10)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(11)}" th:name="${c.names.get(11)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(12)}" th:name="${c.names.get(12)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(13)}" th:name="${c.names.get(13)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(14)}" th:name="${c.names.get(14)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(15)}" th:name="${c.names.get(15)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(16)}" th:name="${c.names.get(16)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(17)}" th:name="${c.names.get(17)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(18)}" th:name="${c.names.get(18)}"/>
+ 					<input type="hidden" value="0" th:class="${c.names.get(19)}" th:name="${c.names.get(19)}"/>
+				</div>
+			</div>
+		</section>
+	</form>
+</body>
+</html>

@@ -1,0 +1,156 @@
+@charset "UTF-8";
+*{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255 229 207);
+}
+h1{
+	text-align: center;
+}
+div.tax8,div.tax10{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0.5rem;
+}
+.tax8 div,.tax10 div{
+    justify-content: space-around;
+    width: 11.25%;
+    padding: 0 0.6rem;
+    border: 1px solid;
+    margin: 0.5%;
+}
+.input{
+    width: 100%;
+}
+.tax8 button,.tax10 button{
+	width: 103.5%;
+}
+ul p{
+    text-align: center;
+}
+.total{
+    width: 100%;
+
+}
+div.button{
+	display:flex;
+	justify-content: space-around;
+
+}
+.userOption {
+
+    padding: 1rem;
+    	text-align: center;
+	justify-content: center;
+}
+.input{
+    color: #CCC;
+    text-align: right;
+}
+form.index{
+	margin: 0 5%;
+}
+
+.calc,.delete{
+	margin: 0 2%;
+	width: 10%;
+}
+.formContent{
+	width:100%;
+	padding: 0.5rem;
+	display:flex;
+}
+
+.formContent div{
+	justify-content: center;
+	padding: 0.2rem;
+	padding-right: 1rem;
+	width: 50%;
+}
+.formText,.output{
+	display:block;
+	padding: 0.2rem 1rem;
+	height: 1.5rem;
+}
+.formText{
+	text-align: end;
+}
+.button input,.button button{
+	padding: 0.2rem;
+	margin: 0.5rem;
+	justify-content: center;
+}
+
+input[type="date"]{
+	width:10%;
+}
+input[type="text"]{
+	width: 80%;
+}
+span:first-child{
+	width:40%;
+}
+input[type="submit"]{
+	width: 5rem;
+}
+div.confirm{
+	display:flex;
+}
+div.confirm ul{
+	width: 20%;
+	margin: 1rem;
+	justify-content: center;
+}
+.confirmKeys{
+	text-align: end;
+}
+.confirmValues{
+		text-align: start;
+}
+form.confirmForm{
+	margin-left: 19%;
+	margin-top: 2rem;
+}
+form.confirmForm input{
+	width: 5rem;
+	height: 2.5rem;
+}
+p.error{
+	color:red;
+	font-size: 1.5rem;
+	text-align: center;
+}
+#addComment button{
+	width: 24%;
+	padding: 0.3rem 1rem;
+}
+.formContent div:nth-child(1){
+	width:40%;
+}
+.formContent div:nth-child(2){
+	width:15%;
+}
+.formContent div:nth-child(3){
+	width:40%;
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

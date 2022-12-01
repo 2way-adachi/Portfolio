@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>家計簿税率計算</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+<script th:src="@{/script.js}"></script>
+<link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body th:object="${pd}">
+	<h1>送信データの確認</h1>
+	<div class="confirm">
+	<ul class="confirmKeys">
+		<li><span th:text="${pd.displayNames.get(0)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(1)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(2)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(3)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(4)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(5)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(6)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(7)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(8)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(9)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(10)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(11)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(12)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(13)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(14)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(15)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(16)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(17)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(18)}"></span></li>
+		<li><span th:text="${pd.displayNames.get(19)}"></span></li>
+		<li>税別・税込</li>
+		<li>入力日付</li>
+		<li>コメント</li>		
+	</ul>
+	<ul class="confirmValues">
+		<li><span th:text="${pd.dataList.get(0)}"></span></li>
+		<li><span th:text="${pd.dataList.get(1)}"></span></li>
+		<li><span th:text="${pd.dataList.get(2)}"></span></li>
+		<li><span th:text="${pd.dataList.get(3)}"></span></li>
+		<li><span th:text="${pd.dataList.get(4)}"></span></li>
+		<li><span th:text="${pd.dataList.get(5)}"></span></li>
+		<li><span th:text="${pd.dataList.get(6)}"></span></li>
+		<li><span th:text="${pd.dataList.get(7)}"></span></li>
+		<li><span th:text="${pd.dataList.get(8)}"></span></li>
+		<li><span th:text="${pd.dataList.get(9)}"></span></li>
+		<li><span th:text="${pd.dataList.get(10)}"></span></li>
+		<li><span th:text="${pd.dataList.get(11)}"></span></li>
+		<li><span th:text="${pd.dataList.get(12)}"></span></li>
+		<li><span th:text="${pd.dataList.get(13)}"></span></li>
+		<li><span th:text="${pd.dataList.get(14)}"></span></li>
+		<li><span th:text="${pd.dataList.get(15)}"></span></li>
+		<li><span th:text="${pd.dataList.get(16)}"></span></li>
+		<li><span th:text="${pd.dataList.get(17)}"></span></li>
+		<li><span th:text="${pd.dataList.get(18)}"></span></li>
+		<li><span th:text="${pd.dataList.get(19)}"></span></li>
+		<li><span th:text="${pd.tax}"></span></li>
+		<li><span th:text="${pd.date}"></span></li>
+		<li><span th:text="${pd.comment}"></span></li>		
+	</ul>
+	</div>
+	<form class="confirmForm" action="result" method="GET">
+		<input type="submit" value="送信"/>
+	</form>
+</body>
+</html>
